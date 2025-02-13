@@ -1,37 +1,49 @@
 ---
-title: "Example"
-data: today
-author: "Your name"
+editor:
+  render-on-save: true
+title: "Title for X chromosome talk"
+subtitle: "Venue<br>"
+# author: 
+#     - Kasper
+#     - Mikkel
+#     - Meritxell
+#     - Erik
+#     - Søren
+#     - Ariadna
+# institute: 
+#     - "&gt;10 years"
+#     - "&gt;10 years"
+#     - "5 years"
+#     - "4 years"
+#     - "5 months"
+#     - "5 months"
+author: 
+    - Kasper<br>Munch
+    - Mikkel<br>Schierup
+    - Jeff<br>Rogers
+    - Clifford<br>Jolly
+    - Christian<br>Roos
+    - Dietmar<br>Zinner
+institute: 
+    - "BiRC<br>Aarhus University<br>Denmark"
+    - "BiRC<br>Aarhus University<br>Denmark"
+    - "Baylor<br>USA"
+    - "NYU<br>USA"
+    - "Primate Center<br>Germany"
+    - "GAU - Göttingen<br>Gernamy"
+date: last-modified
+# auto-stretch: false
+code-line-numbers: false
+highlight-style: kate
+code-block-background: true
 ---
 
-```{python}
-#| echo: false
-# make global parameters available to embed in text
-import sys
-sys.path.append('..')
-from global_params import load_params
-params = load_params('../global_params.yml')
-```
 
-## Admixture displacement in each <br>**geographical region** {.smaller}
+## Admixture displacement in each<br>**geographical region**
 
-### This is a subtitle
+:::: {.columns }
 
-Here we have some text that may run over several lines of the slide frame,
-depending on how long it is.
-
-- first item 
-    - A sub item
-
-Next, we'll brief review some theme-specific components.
-
-- Note that _all_ of the standard Reveal.js
-[features](https://quarto.org/docs/presentations/revealjs/)
-can be used with this theme, even if we don't highlight them here.
-
-## Additional theme classes
-
-### Some extra things you can do with the clean theme
+::: {.column width="50%" align="center" }
 
 Special classes for emphasis
 
@@ -39,73 +51,391 @@ Special classes for emphasis
 - `.fg` class for custom colour, e.g. [important note]{.fg style="--col: #e64173"}.
 - `.bg` class for custom background, e.g. [important note]{.bg style="--col: #e64173"}.
 
-Cross-references
-
-- `.button` class provides a Beamer-like button, e.g.
-[[Summary]{.button}](#sec-summary)
-
-
-## Social norms
-
-### Sampling
-
-We used a sample size of `{python} params.sample_size`.
-
-In Denmark, the workplace interaction is very informal and largely unaffected by seniority and age. 
-
-{{< embed ../notebooks/example.ipynb#doc-sampling echo=false >}}
-
-## Social norms
-
-### Neither academic seniority or age affected interaction
-
-{{< embed ../notebooks/example.ipynb#fig-danishinteraction >}}
-
-<!-- a bug in quarto does not allow successive embeds witout somthing in between (like this) -->
-
-{{< embed ../notebooks/example.ipynb#doc-formality-correlation echo=false >}}
-
-## Slide title
-
-::: {.incremental}
-- Eat spaghetti
-- Drink wine
 :::
 
-## Slide title
 
-:::: {.columns}
+::: {.column width="50%"}
 
-::: {.column width="40%"}
-Left column
+{{< embed sojern.ipynb#fig-hum-nean-genome-ideogram-tall echo=false  width="100px" >}}
+
+
 :::
 
-::: {.column width="60%"}
-- One
-- Two
-- Three
+
+::::
+
+
+
+
+
+-------------------------------------------------------------------------------
+
+## Looking for **puzzle pieces**
+
+:::: {layout="[[1,1],[1,1],[1,1]]" style="margin-top:30pt"}
+
+::: {#always-visible}
+
+#### Single-cell expression
+
+* Testis tissue collection
+* single-cell expression
+
+:::
+
+::: {.fragment}
+
+#### Spermatid classification
+
+* X and Y spermatid classification
+* Differential gene expression
+
+:::
+
+::: {.fragment}
+
+#### Sweeps in humans
+
+* Extended Common Haplotypes (ECH)
+* Sweeps - Relate
+:::
+
+::: {.fragment}
+
+#### Baboons
+
+* Admixture / Swamping
+* Selection on X ancestry
+
+:::
+
+::: {.fragment}
+
+#### Chromatin architecture
+
+* Macaque spermatogenesis
+* A/B compartment borders
+
+:::
+
+::: {.fragment}
+
+#### Something
+
+* alksdjfa
+* laksdjfa
+
 :::
 
 ::::
 
-## Admixture displacement in each <br>**geographical region** {.smaller}
+-------------------------------------------------------------------------------
 
-:::: {.columns}
 
-::: {.column width="40%"}
-{{< embed ../notebooks/example.ipynb#doc-formality-correlation echo=false >}}
+## Two years of pouring over **gene lists**
+
+:::: {layout="[[1,1],[1,1]]" style="margin-top:30pt"}
+
+::: {#always-visible}
+
+#### Gene functions
+
+* Motor / microtubule
+* Chromatin organization
+
 :::
 
-::: {.column width="60%"}
-{{< embed ../notebooks/example.ipynb#fig-danishinteraction >}}
+::: {.fragment}
+
+#### Gene interactions
+
+* PPI networks
+* Pathways
+
 :::
+
+::: {.fragment}
+
+#### Silencing
+
+* MSCI escape
+* Xi escape
+
+:::
+
+::: {.fragment}
+
+#### Gametologs
+
+* Ampliconic/multicopy
+* Human/primate expression
+
+:::
+
+::: {.fragment}
+
+#### Gene classes
+
+* Dyneins
+* DEAD-box genes
+* NMD genes
+
+:::
+
+::: {.fragment}
+
+#### Gene lists
+
+* Enrichments
+* Overlaps
+
+:::
+
 
 ::::
 
-## Slide Title
 
-Slide content
+-------------------------------------------------------------------------------
+
+## ECH90 genes on **non-African** chrX 
+
+::: { .gene-list .no-legend}
+
+{{< embed sojern.ipynb#tbl-ech90-genelist echo=true >}}
+
+:::
 
 ::: aside
-Schumer et al. (2018)
+Skov et al. (2023), *Cell Genomics*
 :::
+
+
+-------------------------------------------------------------------------------
+
+## Human admixture<br>**into Neanderthals**
+
+:::: {.columns}
+
+::: {.column width="40%" .bullet-column}
+
+- ARGweaver-D
+- Admixture from modern humans into Neanderthals 250,000-300,000 BP
+- Or gradual swamping of an early human population by Neanderthals
+
+
+:::
+
+::: {.column width="60%" .no-legend .full-height}
+
+{{< embed sojern.ipynb#fig-hum-nean-genome-ideogram-tall echo=false  width="100px" >}}
+
+:::
+
+:::
+
+::: aside
+Hubisz et al. (2020), *PLoS Genetics*
+:::
+
+-------------------------------------------------------------------------------
+
+## fig-hum-nean-genome-ideogram
+
+{{< embed sojern.ipynb#fig-hum-nean-genome-ideogram echo=false >}}
+
+::: aside
+Name et al. (Year), *Journal*
+:::
+
+-------------------------------------------------------------------------------
+
+## fig-hum-nean-cDEG-overlap
+
+{{< embed sojern.ipynb#fig-hum-nean-cDEG-overlap echo=false >}}
+
+::: aside
+Name et al. (Year), *Journal*
+:::
+
+-------------------------------------------------------------------------------
+
+## doc-hum-nean-cDEG-overlap-fisher
+
+{{< embed sojern.ipynb#doc-hum-nean-cDEG-overlap-fisher echo=false >}}
+
+::: aside
+Name et al. (Year), *Journal*
+:::
+
+-------------------------------------------------------------------------------
+
+## tbl-ABborder-tests
+
+{{< embed sojern.ipynb#tbl-ABborder-tests echo=false >}}
+
+::: aside
+Name et al. (Year), *Journal*
+:::
+
+-------------------------------------------------------------------------------
+
+## tbl-pure-ancestry-border-tests
+
+{{< embed sojern.ipynb#tbl-pure-ancestry-border-tests echo=false >}}
+
+::: aside
+Name et al. (Year), *Journal*
+:::
+
+-------------------------------------------------------------------------------
+
+## fig-gog-ancestry-prop
+
+{{< embed sojern.ipynb#fig-gog-ancestry-prop echo=false >}}
+
+::: aside
+Name et al. (Year), *Journal*
+:::
+
+-------------------------------------------------------------------------------
+
+## fig-gog-pure-regions
+
+{{< embed sojern.ipynb#fig-gog-pure-regions echo=false >}}
+
+::: aside
+Name et al. (Year), *Journal*
+:::
+
+-------------------------------------------------------------------------------
+
+## fig-AB-macaque
+
+{{< embed sojern.ipynb#fig-AB-macaque echo=false >}}
+
+::: aside
+Name et al. (Year), *Journal*
+:::
+
+-------------------------------------------------------------------------------
+
+## fig-AB-macaque-with-annot
+
+{{< embed sojern.ipynb#fig-AB-macaque-with-annot echo=false >}}
+
+::: aside
+Name et al. (Year), *Journal*
+:::
+
+-------------------------------------------------------------------------------
+
+## fig-gog-pure-reions-cDEG
+
+{{< embed sojern.ipynb#fig-gog-pure-reions-cDEG echo=false >}}
+
+::: aside
+Name et al. (Year), *Journal*
+:::
+
+-------------------------------------------------------------------------------
+
+## fig-macaque-hic-matrix
+
+{{< embed sojern.ipynb#fig-macaque-hic-matrix echo=false >}}
+
+::: aside
+Name et al. (Year), *Journal*
+:::
+
+-------------------------------------------------------------------------------
+
+## Acknowledgements 
+
+:::: {layout="[[1,1,1],[1,1]]" style="margin-top:30pt"}
+
+
+::: {#always-visible}
+
+#### Kasper Munch group
+
+* Erik Fogh Sørensen
+* Søren Jørgensen
+* Ari Saez Gomez
+
+:::
+
+::: {#always-visible}
+
+#### Mikkel Schierup group
+
+* Meritxell 
+* Mikkel Heide Schierup
+
+:::
+
+::: {#always-visible}
+
+#### Baboon consortium
+
+* Cliff Jolly
+* Jeff Rogers 
+* Christian Roos
+* Dietmar Zinner
+
+:::
+
+::: {#always-visible}
+
+#### Computing
+
+* Genome|DK
+
+
+:::
+::: {.fragment}
+
+#### Funding
+
+* Novo Nordisk Foundation
+
+:::
+
+::::
+
+
+```{python}
+#| echo: false
+#| output: false
+
+import subprocess, os, segno
+# path = subprocess.check_output('git rev-parse --show-toplevel'.split())
+path = b'/Users/kmt/hic-spermatogenesis'
+repository_name = os.path.basename(path.decode())
+
+url = f'munch-group.org/{repository_name}'
+
+qrcode = segno.make_qr(f'https://{url}')
+qrcode.save(
+    "qrcode.svg",
+    scale=3,
+    border=0,
+)
+```
+
+:::: {layout="[[1,1]]" style="margin-top:30pt"}
+
+::: {.fragment .alert #always-visible}
+Code to reproduce this presentation is available at: <br> [`{python} url`](https://`{python} url`)
+
+
+:::
+
+::: {.fragment .alert #always-visible}
+
+Slides can be browsed here:<br>![](qrcode.svg)
+
+:::
+
+
+::::
+-------------------------------------------------------------------------------

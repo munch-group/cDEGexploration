@@ -8,7 +8,7 @@ execute:
   echo: false
 
 project:
-  output-dir: ../_book/slides
+  output-dir: _book/slides
   render:
     - index.qmd
 

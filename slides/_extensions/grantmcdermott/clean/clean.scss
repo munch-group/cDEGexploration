@@ -3,7 +3,8 @@
 // Custom colours and variables
 
 $jet: #131516;
-$accent: #107895;
+// $accent: #107895;
+$accent: #3d3d3d;
 $accent2: #9a2515;
 // $accent2: #e64173;
 $right-arrow: "\2192"; // Unicode character for right arrow
@@ -24,22 +25,86 @@ Note: This theme uses the Roboto font family, which it imports from Google
   preserving consistent font weights, you may also wish to remove "Roboto"
   from the choice set if the family is installed locally.
 */
-@import url('https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i&display=swap');
 
 $font-family-sans-serif: "Roboto", sans-serif !default;
 $presentation-heading-font: "Roboto", sans-serif !default;
 
 $presentation-heading-color: $jet !default;
-$presentation-heading-font-weight: lighter;
+// $presentation-heading-font-weight: lighter;
+$presentation-heading-font-weight: normal;
 //$presentation-heading-line-height: 2;
 //$presentation-block-margin: 28px;
-$presentation-font-size-root: 32px;
+$presentation-font-size-root: 35px;
+
+$presentation-h2-font-size: 1.2em;
+
+
+// scss variables:
 
 // colors
 //$body-bg: #f0f1eb !default;
-$body-color: $jet !default;
-$link-color: $accent !default;
-$selection-bg: #26351c !default;
+
+// $body-color: $jet !default;
+// $link-color: $accent !default;
+// $selection-bg: #26351c !default;
+
+// colors
+// $body-bg: #fff;
+// $body-color: #222;
+// $text-muted: lighten($body-color, 50%);
+// $link-color: #2a76dd;
+// $link-color-hover: lighten($link-color, 15%);
+// $selection-bg: lighten($link-color, 25%);
+// $selection-color: $body-bg;
+// $light-bg-text-color: #222;
+// $light-bg-link-color: #2a76dd;
+// $light-bg-code-color: #4758ab;
+// $dark-bg-text-color: #fff;
+// $dark-bg-link-color: #42affa;
+// $dark-bg-code-color: #ffa07a;
+
+// fonts;
+// $font-family-sans-serif: “Source Sans Pro”, Helvetica, sans-serif;
+// $font-family-monospace: monospace;
+// $presentation-font-size-root: 40px;
+// $presentation-font-smaller: 0.7;
+// $presentation-line-height: 1.3;
+
+// headers;
+// $presentation-h1-font-size: 2.5em;
+// $presentation-h2-font-size: 1.6em;
+// $presentation-h3-font-size: 1.3em;
+// $presentation-h4-font-size: 1em;
+// $presentation-heading-font: $font-family-sans-serif;
+// $presentation-heading-color: $body-color;
+// $presentation-heading-line-height: 1.2;
+// $presentation-heading-letter-spacing: normal;
+// $presentation-heading-text-transform: none;
+// $presentation-heading-text-shadow: none;
+// $presentation-heading-font-weight: 600;
+// $presentation-h1-text-shadow: none;
+
+// code blocks
+// $code-block-bg: $body-bg;
+$code-block-bg: #efefef;
+// $code-block-border-color: lighten($body-color, 60%);
+$code-block-font-size: 0.65em;
+
+// inline code
+// $code-color: var(–quarto-hl-fu-color);
+// $code-bg: transparent;
+
+// tabsets
+// $tabset-border-color: $code-block-border-color;
+
+// layout
+// $border-color: lighten($body-color, 30%);
+// $border-width: 1px;
+// $border-radius: 3px;
+// $presentation-block-margin: 12px;
+// $presentation-slide-text-align: left;
+// $presentation-title-slide-text-align: center;
 
 
 /*-- scss:rules --*/
@@ -62,8 +127,9 @@ $selection-bg: #26351c !default;
   .title {
     color: $body-color;
     font-size: 1.4em;
-    // font-weight: 350;
-    font-weight: lighter;
+    font-weight: 350;
+    // font-weight: lighter;
+    font-weight: normal;
   }
 
   .subtitle {
@@ -103,7 +169,8 @@ $selection-bg: #26351c !default;
 .reveal h2 {
   // font-weight: 350;
   font-weight: lighter;
-  font-size: 1.4em;
+  // font-size: 1.4em;
+  margin-bottom: 1em;
 }
 
 .reveal h3 {
@@ -145,7 +212,7 @@ $selection-bg: #26351c !default;
 .reveal ul {
   // font-weight: 300;
   font-weight: lighter;
-  padding-left: 16px;
+  padding-left: 16px;    
 
   li::marker {
     color: mix($accent, white, 70%);
@@ -176,6 +243,39 @@ $selection-bg: #26351c !default;
     color: $accent;
   }
 }
+
+.bullet-column ul,
+.bullet-column ol {
+  @extend .column;
+  margin-top: 80px;
+}
+
+
+.bullet-column ul li,
+.bullet-column ol li {
+  @extend .column;
+  // display: flex;
+  // flex-direction: column;
+  // 2eight: 100%;
+  // font-weight: lighter;
+  padding-top: 0.5em;
+  line-height: 1.5em;
+}
+
+
+// .bullet-column li {
+//   @extend .reveal;
+//   font-weight: lighter;
+
+//   padding-top: 0.5em;
+//   line-height: 1.5em;
+// }
+
+// .bullet-column ul, ol {
+//   // @extend .reveal;
+//   margin-top: 80px;
+// }
+
 
 // Move "hamburger" menu button to top right
 
@@ -254,17 +354,45 @@ $selection-bg: #26351c !default;
 .reveal table th,
 .reveal table td {
   border: none; /* Remove internal row lines */
-  padding: .23em; /* Adjust padding as needed */
+  // padding: 0.53em; /* Adjust padding as needed */
+  padding: 0.23em; /* Adjust padding as needed */
   text-align: left; /* Adjust text alignment as needed */
   font-weight: lighter; /* Lighter font weight for main table text */
 }
 
-/* Adds a bottom border to the table header row for distinction */
-.reveal table thead th,
-.reveal .slides table tr:last-child td,
-.reveal .slides table {
-  border-bottom: 2px solid #D3D3D3; /* Dark grey color for the bottom border */
+/* make gene lists look good */
+.gene-list table th,
+.gene-list table td {
+  @extend .reveal;
+  font-size: 1.0em;
+  white-space: nowrap;
+  padding-top: 18px;
+  padding-right: 15px;
 }
+/* for makeing table and figure legends transparent */
+.no-legend figcaption {
+  @extend .reveal;
+  color: transparent !important;
+}
+
+.full-height {
+  @extend .column;
+  margin-top: -130px;
+}
+
+
+// .aside div, p {
+//   display: inline-block!important;
+//   align: right!important;
+//   color: red;
+// }
+
+// /* Adds a bottom border to the table header row for distinction */
+// .reveal table thead th,
+// .reveal .slides table tr:last-child td,
+// .reveal .slides table {
+//   border-bottom: 2px solid #D3D3D3; /* Dark grey color for the bottom border */
+// }
 
 /* Make column headers bold */
 .reveal table thead th {
