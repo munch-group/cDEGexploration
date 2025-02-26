@@ -1,34 +1,24 @@
+name: cooler
 channels:
+  - defaults
   - conda-forge
-  - kaspermunch
-  - gwforg
-  - micknudsen
-  - anaconda
 dependencies:
-  - jupyterlab=4
-  - jupyterlab-quarto  
-  - nodejs
-  - pytables
   - scipy
+  - jupyterlab
+  - genominterv
+  - nodejs
+  - cooltools
   - seaborn
-  - slurm-jupyter
-  - statsmodels
-  - scikit-learn
-  - geneinfo
-  - git
-  - nbdime
-  - gwf
-  - gwf-utilization
-  - r-essentials
-  - pyyaml
+  - pywavelets
+  - matplotlib==3.9.2
+  - cooler
   - tabulate
-  - pycryptodome>3.10
-  - pbkdf2
-  - cryptography 
-  - git 
-  - nbdime
-  - missingno
-  - geneinfo # munch-group
-  - horizonplot # munch-group
-  - chromwindow # munch-group
-  - genominterv # munch-group
+  - upsetplot
+  - umap-learn
+  - pytables
+  - markdown
+  - conda-build
+  - segno
+  - git-lfs
+  - geneinfo=5.0.17
+prefix: /Users/kmt/miniconda3/envs/cooler
