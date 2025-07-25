@@ -143,4 +143,5 @@ _book/
 # apple double files
 ._*
 
+# symlink to data on external disk
 ./data
